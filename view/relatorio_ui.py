@@ -19,48 +19,48 @@ from PySide6.QtWidgets import (QApplication, QDialog, QHBoxLayout, QHeaderView,
     QLabel, QSizePolicy, QTableView, QVBoxLayout,
     QWidget)
 
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        if not Dialog.objectName():
-            Dialog.setObjectName(u"Dialog")
-        Dialog.resize(400, 300)
-        self.verticalLayout_4 = QVBoxLayout(Dialog)
+class Ui_janela_relatorio(object):
+    def setupUi(self, janela_relatorio):
+        if not janela_relatorio.objectName():
+            janela_relatorio.setObjectName(u"janela_relatorio")
+        janela_relatorio.resize(400, 300)
+        self.verticalLayout_4 = QVBoxLayout(janela_relatorio)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_3 = QVBoxLayout()
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.label = QLabel(Dialog)
-        self.label.setObjectName(u"label")
+        self.lbl_relatorio_nome_relatorio = QLabel(janela_relatorio)
+        self.lbl_relatorio_nome_relatorio.setObjectName(u"lbl_relatorio_nome_relatorio")
 
-        self.verticalLayout_3.addWidget(self.label)
+        self.verticalLayout_3.addWidget(self.lbl_relatorio_nome_relatorio)
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.label_2 = QLabel(Dialog)
-        self.label_2.setObjectName(u"label_2")
+        self.lbl_relatorio_nome_vendas_totais = QLabel(janela_relatorio)
+        self.lbl_relatorio_nome_vendas_totais.setObjectName(u"lbl_relatorio_nome_vendas_totais")
 
-        self.verticalLayout.addWidget(self.label_2)
+        self.verticalLayout.addWidget(self.lbl_relatorio_nome_vendas_totais)
 
-        self.tableView = QTableView(Dialog)
-        self.tableView.setObjectName(u"tableView")
+        self.tb_vendas_totais = QTableView(janela_relatorio)
+        self.tb_vendas_totais.setObjectName(u"tb_vendas_totais")
 
-        self.verticalLayout.addWidget(self.tableView)
+        self.verticalLayout.addWidget(self.tb_vendas_totais)
 
 
         self.horizontalLayout.addLayout(self.verticalLayout)
 
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.label_3 = QLabel(Dialog)
-        self.label_3.setObjectName(u"label_3")
+        self.lbl_relatorio_nome_vendas_por_categoria = QLabel(janela_relatorio)
+        self.lbl_relatorio_nome_vendas_por_categoria.setObjectName(u"lbl_relatorio_nome_vendas_por_categoria")
 
-        self.verticalLayout_2.addWidget(self.label_3)
+        self.verticalLayout_2.addWidget(self.lbl_relatorio_nome_vendas_por_categoria)
 
-        self.tableView_2 = QTableView(Dialog)
-        self.tableView_2.setObjectName(u"tableView_2")
+        self.tb_vendas_por_categoria = QTableView(janela_relatorio)
+        self.tb_vendas_por_categoria.setObjectName(u"tb_vendas_por_categoria")
 
-        self.verticalLayout_2.addWidget(self.tableView_2)
+        self.verticalLayout_2.addWidget(self.tb_vendas_por_categoria)
 
 
         self.horizontalLayout.addLayout(self.verticalLayout_2)
@@ -72,15 +72,15 @@ class Ui_Dialog(object):
         self.verticalLayout_4.addLayout(self.verticalLayout_3)
 
 
-        self.retranslateUi(Dialog)
+        self.retranslateUi(janela_relatorio)
 
-        QMetaObject.connectSlotsByName(Dialog)
+        QMetaObject.connectSlotsByName(janela_relatorio)
     # setupUi
 
-    def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.label.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Relat\u00f3rios</span></p></body></html>", None))
-        self.label_2.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Vendas totais</span></p></body></html>", None))
-        self.label_3.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Vendas por categoria</span></p></body></html>", None))
+    def retranslateUi(self, janela_relatorio):
+        janela_relatorio.setWindowTitle(QCoreApplication.translate("janela_relatorio", u"Dialog", None))
+        self.lbl_relatorio_nome_relatorio.setText(QCoreApplication.translate("janela_relatorio", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Relat\u00f3rios</span></p></body></html>", None))
+        self.lbl_relatorio_nome_vendas_totais.setText(QCoreApplication.translate("janela_relatorio", u"<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Vendas totais</span></p></body></html>", None))
+        self.lbl_relatorio_nome_vendas_por_categoria.setText(QCoreApplication.translate("janela_relatorio", u"<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">Vendas por categoria</span></p></body></html>", None))
     # retranslateUi
 

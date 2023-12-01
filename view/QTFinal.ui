@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>janela_QTFinal</class>
+ <widget class="QMainWindow" name="janela_QTFinal">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -28,7 +28,7 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <widget class="QWidget" name="widget" native="true">
+     <widget class="QWidget" name="widget_qtfinal_logo_principal" native="true">
       <property name="maximumSize">
        <size>
         <width>16777215</width>
@@ -56,66 +56,119 @@
      </widget>
     </item>
     <item>
-     <widget class="QWidget" name="widget_2" native="true">
+     <widget class="QWidget" name="widget_qtfinal_todas_opcoes" native="true">
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
-          <widget class="QLabel" name="label">
+          <widget class="QLabel" name="lbl_qtfinal_nome_gerenciamento_de_estoque">
            <property name="text">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Gerenciamento de estoque&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_2">
-           <property name="styleSheet">
-            <string notr="true">image: url(:/icon/distribution_4237529.png)</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="lbl_qtfinal_imagem_cadastro_de_produtos">
+             <property name="styleSheet">
+              <string notr="true">image: url(:/icon/distribution_4237529.png)</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lbl_qtfinal_imagem_pedidos">
+             <property name="styleSheet">
+              <string notr="true">image:url(:/icon/return_7835555.png)</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton">
-           <property name="text">
-            <string>Cadastrado de produtos</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QPushButton" name="btn_qtfinal_cadastr_de_produtos">
+             <property name="text">
+              <string>Cadastrado de produtos</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_qtfinal_pedidos">
+             <property name="text">
+              <string>Pedidos</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QLabel" name="label_3">
-           <property name="styleSheet">
-            <string notr="true">image:url(:/icon/return_7835555.png)</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QLabel" name="lbl">
+             <property name="styleSheet">
+              <string notr="true">image:url(:/icon/shopping-cart_2331970.png)</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lbl_qtfinal_imagem_relatorios">
+             <property name="styleSheet">
+              <string notr="true">image: url(:/icon/data-analytics_9955699.png)</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_3">
-           <property name="text">
-            <string>Pedidos</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QPushButton" name="btn_qtfinal_vendas">
+             <property name="text">
+              <string>Vendas</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_qtfinal_relatorios">
+             <property name="text">
+              <string>Relatórios</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QLabel" name="label_4">
-           <property name="styleSheet">
-            <string notr="true">image: url(:/icon/data-analytics_9955699.png)</string>
+          <widget class="QTableWidget" name="tb_qtfinal_estoque_baixo">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>120</height>
+            </size>
            </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_2">
-           <property name="text">
-            <string>Relatórios</string>
-           </property>
+           <column>
+            <property name="text">
+             <string>Produto</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Quantidade em estoque</string>
+            </property>
+           </column>
           </widget>
          </item>
         </layout>
@@ -127,7 +180,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="../../../Downloads/iconFinal.qrc"/>
+  <include location="iconFinal.qrc"/>
  </resources>
  <connections/>
 </ui>
