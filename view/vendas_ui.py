@@ -19,81 +19,81 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QHBoxLayout,
     QLabel, QLineEdit, QPushButton, QSizePolicy,
     QVBoxLayout, QWidget)
 
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        if not Dialog.objectName():
-            Dialog.setObjectName(u"Dialog")
-        Dialog.resize(400, 300)
-        self.verticalLayout_2 = QVBoxLayout(Dialog)
+class Ui_janela_vendas(object):
+    def setupUi(self, janela_vendas):
+        if not janela_vendas.objectName():
+            janela_vendas.setObjectName(u"janela_vendas")
+        janela_vendas.resize(400, 300)
+        self.verticalLayout_2 = QVBoxLayout(janela_vendas)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.label = QLabel(Dialog)
-        self.label.setObjectName(u"label")
+        self.lbl_venda_nome_vendas = QLabel(janela_vendas)
+        self.lbl_venda_nome_vendas.setObjectName(u"lbl_venda_nome_vendas")
 
-        self.verticalLayout.addWidget(self.label)
+        self.verticalLayout.addWidget(self.lbl_venda_nome_vendas)
 
-        self.label_3 = QLabel(Dialog)
-        self.label_3.setObjectName(u"label_3")
+        self.lbl_venda_nome_produto = QLabel(janela_vendas)
+        self.lbl_venda_nome_produto.setObjectName(u"lbl_venda_nome_produto")
 
-        self.verticalLayout.addWidget(self.label_3)
+        self.verticalLayout.addWidget(self.lbl_venda_nome_produto)
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.txt_produto_venda = QLineEdit(Dialog)
-        self.txt_produto_venda.setObjectName(u"txt_produto_venda")
+        self.txt_venda_produto = QLineEdit(janela_vendas)
+        self.txt_venda_produto.setObjectName(u"txt_venda_produto")
 
-        self.horizontalLayout.addWidget(self.txt_produto_venda)
+        self.horizontalLayout.addWidget(self.txt_venda_produto)
 
-        self.btn_buscar_produto_venda = QPushButton(Dialog)
-        self.btn_buscar_produto_venda.setObjectName(u"btn_buscar_produto_venda")
+        self.btn_venda_buscar_produto = QPushButton(janela_vendas)
+        self.btn_venda_buscar_produto.setObjectName(u"btn_venda_buscar_produto")
 
-        self.horizontalLayout.addWidget(self.btn_buscar_produto_venda)
+        self.horizontalLayout.addWidget(self.btn_venda_buscar_produto)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout)
 
-        self.comboBox_produto_venda = QComboBox(Dialog)
-        self.comboBox_produto_venda.setObjectName(u"comboBox_produto_venda")
+        self.comboBox_venda_produto = QComboBox(janela_vendas)
+        self.comboBox_venda_produto.setObjectName(u"comboBox_venda_produto")
 
-        self.verticalLayout.addWidget(self.comboBox_produto_venda)
+        self.verticalLayout.addWidget(self.comboBox_venda_produto)
 
-        self.label_4 = QLabel(Dialog)
-        self.label_4.setObjectName(u"label_4")
+        self.lbl_venda_nome_quantidade = QLabel(janela_vendas)
+        self.lbl_venda_nome_quantidade.setObjectName(u"lbl_venda_nome_quantidade")
 
-        self.verticalLayout.addWidget(self.label_4)
+        self.verticalLayout.addWidget(self.lbl_venda_nome_quantidade)
 
-        self.txt_qtd_venda = QLineEdit(Dialog)
-        self.txt_qtd_venda.setObjectName(u"txt_qtd_venda")
+        self.txt_venda_qtd = QLineEdit(janela_vendas)
+        self.txt_venda_qtd.setObjectName(u"txt_venda_qtd")
 
-        self.verticalLayout.addWidget(self.txt_qtd_venda)
+        self.verticalLayout.addWidget(self.txt_venda_qtd)
 
-        self.btn_adicionar_venda = QPushButton(Dialog)
-        self.btn_adicionar_venda.setObjectName(u"btn_adicionar_venda")
+        self.btn_venda_adicionar = QPushButton(janela_vendas)
+        self.btn_venda_adicionar.setObjectName(u"btn_venda_adicionar")
 
-        self.verticalLayout.addWidget(self.btn_adicionar_venda)
+        self.verticalLayout.addWidget(self.btn_venda_adicionar)
 
-        self.btn_finalizar_venda = QPushButton(Dialog)
-        self.btn_finalizar_venda.setObjectName(u"btn_finalizar_venda")
+        self.btn_venda_finalizar = QPushButton(janela_vendas)
+        self.btn_venda_finalizar.setObjectName(u"btn_venda_finalizar")
 
-        self.verticalLayout.addWidget(self.btn_finalizar_venda)
+        self.verticalLayout.addWidget(self.btn_venda_finalizar)
 
 
         self.verticalLayout_2.addLayout(self.verticalLayout)
 
 
-        self.retranslateUi(Dialog)
+        self.retranslateUi(janela_vendas)
 
-        QMetaObject.connectSlotsByName(Dialog)
+        QMetaObject.connectSlotsByName(janela_vendas)
     # setupUi
 
-    def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.label.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Vendas</span></p></body></html>", None))
-        self.label_3.setText(QCoreApplication.translate("Dialog", u"Produto", None))
-        self.btn_buscar_produto_venda.setText(QCoreApplication.translate("Dialog", u"Buscar", None))
-        self.label_4.setText(QCoreApplication.translate("Dialog", u"Quantidade", None))
-        self.btn_adicionar_venda.setText(QCoreApplication.translate("Dialog", u"Adicionar", None))
-        self.btn_finalizar_venda.setText(QCoreApplication.translate("Dialog", u"Finalizar venda", None))
+    def retranslateUi(self, janela_vendas):
+        janela_vendas.setWindowTitle(QCoreApplication.translate("janela_vendas", u"Dialog", None))
+        self.lbl_venda_nome_vendas.setText(QCoreApplication.translate("janela_vendas", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Vendas</span></p></body></html>", None))
+        self.lbl_venda_nome_produto.setText(QCoreApplication.translate("janela_vendas", u"Produto", None))
+        self.btn_venda_buscar_produto.setText(QCoreApplication.translate("janela_vendas", u"Buscar", None))
+        self.lbl_venda_nome_quantidade.setText(QCoreApplication.translate("janela_vendas", u"Quantidade", None))
+        self.btn_venda_adicionar.setText(QCoreApplication.translate("janela_vendas", u"Adicionar", None))
+        self.btn_venda_finalizar.setText(QCoreApplication.translate("janela_vendas", u"Finalizar venda", None))
     # retranslateUi
 

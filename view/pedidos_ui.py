@@ -20,129 +20,129 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QHBoxLayout,
     QSizePolicy, QTableWidget, QTableWidgetItem, QVBoxLayout,
     QWidget)
 
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        if not Dialog.objectName():
-            Dialog.setObjectName(u"Dialog")
-        Dialog.resize(564, 300)
-        self.verticalLayout = QVBoxLayout(Dialog)
+class Ui_janela_pedidos(object):
+    def setupUi(self, janela_pedidos):
+        if not janela_pedidos.objectName():
+            janela_pedidos.setObjectName(u"janela_pedidos")
+        janela_pedidos.resize(564, 300)
+        self.verticalLayout = QVBoxLayout(janela_pedidos)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.label = QLabel(Dialog)
-        self.label.setObjectName(u"label")
-        self.label.setMaximumSize(QSize(16777215, 30))
+        self.lbl_pedidos_nome_pedidos = QLabel(janela_pedidos)
+        self.lbl_pedidos_nome_pedidos.setObjectName(u"lbl_pedidos_nome_pedidos")
+        self.lbl_pedidos_nome_pedidos.setMaximumSize(QSize(16777215, 30))
 
-        self.verticalLayout.addWidget(self.label)
+        self.verticalLayout.addWidget(self.lbl_pedidos_nome_pedidos)
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.widget = QWidget(Dialog)
-        self.widget.setObjectName(u"widget")
-        self.horizontalLayout_4 = QHBoxLayout(self.widget)
+        self.widget_pedidos_maior = QWidget(janela_pedidos)
+        self.widget_pedidos_maior.setObjectName(u"widget_pedidos_maior")
+        self.horizontalLayout_4 = QHBoxLayout(self.widget_pedidos_maior)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.label_2 = QLabel(self.widget)
-        self.label_2.setObjectName(u"label_2")
+        self.lbl_pedidos_nome_criar_pedidos = QLabel(self.widget_pedidos_maior)
+        self.lbl_pedidos_nome_criar_pedidos.setObjectName(u"lbl_pedidos_nome_criar_pedidos")
 
-        self.verticalLayout_2.addWidget(self.label_2)
+        self.verticalLayout_2.addWidget(self.lbl_pedidos_nome_criar_pedidos)
 
-        self.label_3 = QLabel(self.widget)
-        self.label_3.setObjectName(u"label_3")
+        self.lbl_pedidos_nome_produto = QLabel(self.widget_pedidos_maior)
+        self.lbl_pedidos_nome_produto.setObjectName(u"lbl_pedidos_nome_produto")
 
-        self.verticalLayout_2.addWidget(self.label_3)
+        self.verticalLayout_2.addWidget(self.lbl_pedidos_nome_produto)
 
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.lineEdit_2 = QLineEdit(self.widget)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.txt_pedidos_produto = QLineEdit(self.widget_pedidos_maior)
+        self.txt_pedidos_produto.setObjectName(u"txt_pedidos_produto")
 
-        self.horizontalLayout_2.addWidget(self.lineEdit_2)
+        self.horizontalLayout_2.addWidget(self.txt_pedidos_produto)
 
-        self.pushButton_4 = QPushButton(self.widget)
-        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.btn_pedidos_buscar_produto = QPushButton(self.widget_pedidos_maior)
+        self.btn_pedidos_buscar_produto.setObjectName(u"btn_pedidos_buscar_produto")
 
-        self.horizontalLayout_2.addWidget(self.pushButton_4)
+        self.horizontalLayout_2.addWidget(self.btn_pedidos_buscar_produto)
 
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
 
-        self.comboBox = QComboBox(self.widget)
-        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox_pedidos_produto = QComboBox(self.widget_pedidos_maior)
+        self.comboBox_pedidos_produto.setObjectName(u"comboBox_pedidos_produto")
 
-        self.verticalLayout_2.addWidget(self.comboBox)
+        self.verticalLayout_2.addWidget(self.comboBox_pedidos_produto)
 
-        self.label_4 = QLabel(self.widget)
-        self.label_4.setObjectName(u"label_4")
+        self.lbl_pedidos_nome_quantidade = QLabel(self.widget_pedidos_maior)
+        self.lbl_pedidos_nome_quantidade.setObjectName(u"lbl_pedidos_nome_quantidade")
 
-        self.verticalLayout_2.addWidget(self.label_4)
+        self.verticalLayout_2.addWidget(self.lbl_pedidos_nome_quantidade)
 
-        self.lineEdit = QLineEdit(self.widget)
-        self.lineEdit.setObjectName(u"lineEdit")
+        self.txt_pedidos_quantidade = QLineEdit(self.widget_pedidos_maior)
+        self.txt_pedidos_quantidade.setObjectName(u"txt_pedidos_quantidade")
 
-        self.verticalLayout_2.addWidget(self.lineEdit)
+        self.verticalLayout_2.addWidget(self.txt_pedidos_quantidade)
 
-        self.pushButton = QPushButton(self.widget)
-        self.pushButton.setObjectName(u"pushButton")
+        self.btn_pedidos_adicionar = QPushButton(self.widget_pedidos_maior)
+        self.btn_pedidos_adicionar.setObjectName(u"btn_pedidos_adicionar")
 
-        self.verticalLayout_2.addWidget(self.pushButton)
+        self.verticalLayout_2.addWidget(self.btn_pedidos_adicionar)
 
-        self.pushButton_2 = QPushButton(self.widget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.btn_pedidos_finalizar_pedidos = QPushButton(self.widget_pedidos_maior)
+        self.btn_pedidos_finalizar_pedidos.setObjectName(u"btn_pedidos_finalizar_pedidos")
 
-        self.verticalLayout_2.addWidget(self.pushButton_2)
+        self.verticalLayout_2.addWidget(self.btn_pedidos_finalizar_pedidos)
 
 
         self.horizontalLayout_3.addLayout(self.verticalLayout_2)
 
-        self.widget_2 = QWidget(self.widget)
-        self.widget_2.setObjectName(u"widget_2")
-        self.verticalLayout_3 = QVBoxLayout(self.widget_2)
+        self.widget_pedidos_menor = QWidget(self.widget_pedidos_maior)
+        self.widget_pedidos_menor.setObjectName(u"widget_pedidos_menor")
+        self.verticalLayout_3 = QVBoxLayout(self.widget_pedidos_menor)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.label_5 = QLabel(self.widget_2)
-        self.label_5.setObjectName(u"label_5")
+        self.lbl_pedidos_nome_receber_pedidos = QLabel(self.widget_pedidos_menor)
+        self.lbl_pedidos_nome_receber_pedidos.setObjectName(u"lbl_pedidos_nome_receber_pedidos")
 
-        self.verticalLayout_3.addWidget(self.label_5)
+        self.verticalLayout_3.addWidget(self.lbl_pedidos_nome_receber_pedidos)
 
-        self.tableWidget = QTableWidget(self.widget_2)
-        self.tableWidget.setObjectName(u"tableWidget")
+        self.tb_widget_pedidos_receber_pedidos = QTableWidget(self.widget_pedidos_menor)
+        self.tb_widget_pedidos_receber_pedidos.setObjectName(u"tb_widget_pedidos_receber_pedidos")
 
-        self.verticalLayout_3.addWidget(self.tableWidget)
+        self.verticalLayout_3.addWidget(self.tb_widget_pedidos_receber_pedidos)
 
-        self.pushButton_3 = QPushButton(self.widget_2)
-        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.btn_pedidos_receber = QPushButton(self.widget_pedidos_menor)
+        self.btn_pedidos_receber.setObjectName(u"btn_pedidos_receber")
 
-        self.verticalLayout_3.addWidget(self.pushButton_3)
+        self.verticalLayout_3.addWidget(self.btn_pedidos_receber)
 
 
-        self.horizontalLayout_3.addWidget(self.widget_2)
+        self.horizontalLayout_3.addWidget(self.widget_pedidos_menor)
 
 
         self.horizontalLayout_4.addLayout(self.horizontalLayout_3)
 
 
-        self.horizontalLayout.addWidget(self.widget)
+        self.horizontalLayout.addWidget(self.widget_pedidos_maior)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout)
 
 
-        self.retranslateUi(Dialog)
+        self.retranslateUi(janela_pedidos)
 
-        QMetaObject.connectSlotsByName(Dialog)
+        QMetaObject.connectSlotsByName(janela_pedidos)
     # setupUi
 
-    def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.label.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Pedidos</span></p></body></html>", None))
-        self.label_2.setText(QCoreApplication.translate("Dialog", u"Criar pedidos", None))
-        self.label_3.setText(QCoreApplication.translate("Dialog", u"Produto", None))
-        self.pushButton_4.setText(QCoreApplication.translate("Dialog", u"Buscar", None))
-        self.label_4.setText(QCoreApplication.translate("Dialog", u"Quantidade", None))
-        self.pushButton.setText(QCoreApplication.translate("Dialog", u"Adicionar", None))
-        self.pushButton_2.setText(QCoreApplication.translate("Dialog", u"Finalizar pedido", None))
-        self.label_5.setText(QCoreApplication.translate("Dialog", u"Receber pedidos", None))
-        self.pushButton_3.setText(QCoreApplication.translate("Dialog", u"Receber", None))
+    def retranslateUi(self, janela_pedidos):
+        janela_pedidos.setWindowTitle(QCoreApplication.translate("janela_pedidos", u"Dialog", None))
+        self.lbl_pedidos_nome_pedidos.setText(QCoreApplication.translate("janela_pedidos", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Pedidos</span></p></body></html>", None))
+        self.lbl_pedidos_nome_criar_pedidos.setText(QCoreApplication.translate("janela_pedidos", u"Criar pedidos", None))
+        self.lbl_pedidos_nome_produto.setText(QCoreApplication.translate("janela_pedidos", u"Produto", None))
+        self.btn_pedidos_buscar_produto.setText(QCoreApplication.translate("janela_pedidos", u"Buscar", None))
+        self.lbl_pedidos_nome_quantidade.setText(QCoreApplication.translate("janela_pedidos", u"Quantidade", None))
+        self.btn_pedidos_adicionar.setText(QCoreApplication.translate("janela_pedidos", u"Adicionar", None))
+        self.btn_pedidos_finalizar_pedidos.setText(QCoreApplication.translate("janela_pedidos", u"Finalizar pedido", None))
+        self.lbl_pedidos_nome_receber_pedidos.setText(QCoreApplication.translate("janela_pedidos", u"Receber pedidos", None))
+        self.btn_pedidos_receber.setText(QCoreApplication.translate("janela_pedidos", u"Receber", None))
     # retranslateUi
 
