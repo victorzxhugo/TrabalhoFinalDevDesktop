@@ -6,12 +6,18 @@ from datetime import datetime
 
 from infra.config.base import Base
 
-class pedidoFornecedor (Base):
+
+class StatusPedido(Enum):
+    ABERTO = 'Aberto'
+    FINALIZADO = 'Finalizado'
+
+
+class PedidoFornecedor (Base):
     __tablename__ = 'pedido_fornecedor'
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     data_do_pedido: Mapped[datetime] = mapped_column(nullable=False)
-    status: Mapped[str] = mapped_column(nullable=False)
+    status: Mapped[StatusPedido] = mapped_column(nullable=False, default=StatusPedido.ABERTO)
 
 
     produtos: Mapped[List["Produto"]] = relationship("Produto",
