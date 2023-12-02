@@ -12,8 +12,6 @@ class Produto (Base):
     nome: Mapped[str] = mapped_column(nullable=False)
     preco: Mapped[float] = mapped_column(nullable=False)
     quantidade: Mapped[int] = mapped_column(nullable=False)
-    categoria_id: Mapped[int] = mapped_column(ForeingKey("categoria.id", ondelete="CASCADE"))
-    pedido_id: Mapped[int] = mapped_column(ForeingKey("pedido.id", ondelete="CASCADE"))
 
     def __repr__(self):
         return f'Produto [nome={self.nome}, preco={self.preco}, quantidade_em_estoque={self.quantidade_em_estoque}]'
