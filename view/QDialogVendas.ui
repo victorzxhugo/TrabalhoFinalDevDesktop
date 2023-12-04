@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>janela_vendas</class>
+ <widget class="QDialog" name="janela_vendas">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,14 +17,14 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="lbl_venda_nome_vendas">
        <property name="text">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Vendas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_3">
+      <widget class="QLabel" name="lbl_venda_nome_produto">
        <property name="text">
         <string>Produto</string>
        </property>
@@ -33,10 +33,10 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QLineEdit" name="txt_produto_venda"/>
+        <widget class="QLineEdit" name="txt_venda_produto"/>
        </item>
        <item>
-        <widget class="QPushButton" name="btn_buscar_produto_venda">
+        <widget class="QPushButton" name="btn_venda_buscar_produto">
          <property name="text">
           <string>Buscar</string>
          </property>
@@ -45,27 +45,27 @@
       </layout>
      </item>
      <item>
-      <widget class="QComboBox" name="comboBox_produto_venda"/>
+      <widget class="QComboBox" name="comboBox_venda_produto"/>
      </item>
      <item>
-      <widget class="QLabel" name="label_4">
+      <widget class="QLabel" name="lbl_venda_nome_quantidade">
        <property name="text">
         <string>Quantidade</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="txt_qtd_venda"/>
+      <widget class="QLineEdit" name="txt_venda_qtd"/>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_adicionar_venda">
+      <widget class="QPushButton" name="btn_venda_adicionar">
        <property name="text">
         <string>Adicionar</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_finalizar_venda">
+      <widget class="QPushButton" name="btn_venda_finalizar">
        <property name="text">
         <string>Finalizar venda</string>
        </property>
