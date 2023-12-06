@@ -16,7 +16,7 @@ class ProdutoRepository:
     @staticmethod
     def select_produto_by_name(name_produto):
         with DBConnectionHandler() as db :
-            return db.session.query(Produto).filter(Produto.nome == name_produto).first()
+            return db.session.query(Produto).filter( Produto.nome.like(name_produto) and Produto.categoria.like(name_produto)).first()
 
 
     @staticmethod
