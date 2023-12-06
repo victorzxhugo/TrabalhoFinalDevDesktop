@@ -2,9 +2,7 @@ from datetime import datetime
 from sqlalchemy.orm import joinedload
 
 from infra.config.connection import DBConnectionHandler
-from infra.entities.categoria import Categoria
 from infra.entities.produto import Produto
-from infra.entities.pedidoFornecedor import PedidoFornecedor
 
 class ProdutoRepository:
 
