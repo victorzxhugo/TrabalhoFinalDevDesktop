@@ -1,12 +1,8 @@
-from datetime import datetime
-
-import pandas
-import pandas as pd
-from PySide6.QtWidgets import QTableWidget, QMessageBox, QTableWidgetItem
+from PySide6.QtWidgets import QMessageBox
 
 from infra.repository.pedidoFornecedor_repository import PedidoFornecedorRepository
 from infra.repository.produto_repository import ProdutoRepository
-from infra.service.main_window_service import MainWindowService
+from service.main_window_service import MainWindowService
 from infra.entities.produto import Produto
 
 

@@ -122,6 +122,7 @@ class Ui_janela_QTFinal(object):
         self.verticalLayout_3.addLayout(self.horizontalLayout_3)
 
         self.tb_qtfinal_estoque_baixo = QTableWidget(self.widget_qtfinal_todas_opcoes)
+
         if (self.tb_qtfinal_estoque_baixo.columnCount() < 2):
             self.tb_qtfinal_estoque_baixo.setColumnCount(2)
         __qtablewidgetitem = QTableWidgetItem()

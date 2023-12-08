@@ -17,11 +17,11 @@ class MainWindowService:
         main_window.tb_qtfinal_estoque_baixo.setRowCount(0)
         lista_produtos = self.produto_repository.select_all_produtos()
         for produto in lista_produtos[:]:
-            if produto.quantidade > 10:
+            if produto.quantidade is not None and produto.quantidade > 10:
                 lista_produtos.remove(produto)
             main_window.tb_qtfinal_estoque_baixo.setRowCount(len(lista_produtos))
             for linha, produto in enumerate(lista_produtos):
-                if produto.quantidade <= 5:
+                if produto.quantidade is not None and produto.quantidade <= 5:
                     main_window.tb_qtfinal_estoque_baixo.setItem(linha, 0, QTableWidgetItem(produto.nome))
-                    main_window.tb_qtfinal_estoque_baixo.setItem(linha, 1, QTableWidgetItem(produto.quantidade))
+                    main_window.tb_qtfinal_estoque_baixo.setItem(linha, 1, QTableWidgetItem(str(produto.quantidade)))
 
