@@ -6,10 +6,11 @@ from view.main_ui import Ui_janela_QTFinal
 from view.relatorio_ui import Ui_janela_relatorio
 from view.vendas_ui import Ui_janela_vendas
 from view.pedidos_ui import Ui_janela_pedidos
-from view.cadastro_ui import  Ui_janela_cadastro
+from view.cadastro_ui import Ui_janela_cadastro
+from infra.service.cadastro_window_service import CadastroWindowService
 from infra.config.connection import DBConnectionHandler
 
-class MainWindow(QMainWindow, Ui_janela_QTFinal):
+class MainWindow(QMainWindow, Ui_janela_QTFinal, Ui_janela_cadastro):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.setupUi(self)
@@ -18,9 +19,15 @@ class MainWindow(QMainWindow, Ui_janela_QTFinal):
         self.btn_qtfinal_vendas.clicked.connect(self.vendas)
         self.btn_qtfinal_relatorios.clicked.connect(self.relatorios)
 
+        db = DBConnectionHandler()
+
+
+
     def cadastrar_produtos(self):
         self.cadastro_produto_dialog = CadastroDialog()
         self.cadastro_produto_dialog.show()
+
+
 
     def vendas(self):
         self.vendas_dialog = VendasDialog()
@@ -37,6 +44,11 @@ class CadastroDialog(QDialog,Ui_janela_cadastro):
     def __init__(self, parent=None):
         super(CadastroDialog, self).__init__(parent)
         self.setupUi(self)
+        self.cadastro_window_service = CadastroWindowService()
+        self.btn_cadastro_cadastrar.clicked.connect(self.realizar_cadastro)
+
+    def realizar_cadastro(self):
+        self.cadastro_window_service.inserir_cadastro(self)
 
 class VendasDialog(QDialog, Ui_janela_vendas):
     def __init__(self, parent=None):

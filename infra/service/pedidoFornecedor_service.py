@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QMessageBox
 
-from infra.entities.pedidoFornecedor import PedidoFornecedor
+from infra.entities.itensPedido import PedidoFornecedor
 
 from infra.repository.produto_repository import ProdutoRepository
 from infra.repository.pedidoFornecedor_repository import PedidoFornecedorRepository

@@ -60,6 +60,10 @@ class Ui_janela_cadastro(object):
 
         self.comboBox_cadastro_categoria = QComboBox(janela_cadastro)
         self.comboBox_cadastro_categoria.setObjectName(u"comboBox_cadastro_categoria")
+        self.comboBox_cadastro_categoria.addItem('Selecione um item')
+        self.comboBox_cadastro_categoria.addItem('Teu cu')
+        self.comboBox_cadastro_categoria.addItem('Porra')
+        self.comboBox_cadastro_categoria.addItem('Demonho')
 
         self.verticalLayout.addWidget(self.comboBox_cadastro_categoria)
 
