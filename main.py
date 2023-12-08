@@ -7,9 +7,9 @@ from view.relatorio_ui import Ui_janela_relatorio
 from view.vendas_ui import Ui_janela_vendas
 from view.pedidos_ui import Ui_janela_pedidos
 from view.cadastro_ui import Ui_janela_cadastro
-from infra.service.cadastro_window_service import CadastroWindowService
+from service.cadastro_window_service import CadastroWindowService
 from infra.config.connection import DBConnectionHandler
-
+from service.main_window_service import MainWindowService
 class MainWindow(QMainWindow, Ui_janela_QTFinal, Ui_janela_cadastro):
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -18,8 +18,10 @@ class MainWindow(QMainWindow, Ui_janela_QTFinal, Ui_janela_cadastro):
         self.btn_qtfinal_pedidos.clicked.connect(self.pedidos)
         self.btn_qtfinal_vendas.clicked.connect(self.vendas)
         self.btn_qtfinal_relatorios.clicked.connect(self.relatorios)
-
         db = DBConnectionHandler()
+
+        self.main_window_service = MainWindowService()
+        self.main_window_service.populate_table_estoque_baixo(self)
 
 
 

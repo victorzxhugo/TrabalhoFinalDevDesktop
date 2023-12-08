@@ -1,4 +1,6 @@
 from datetime import datetime
+
+from pandas.io.formats import console
 from sqlalchemy.orm import joinedload
 
 from infra.config.connection import DBConnectionHandler

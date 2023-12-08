@@ -18,4 +18,4 @@ class Produto (Base):
 
 
     def __repr__(self):
-        return f'Produto [nome={self.nome}, preco={self.preco}, quantidade_em_estoque={self.quantidade_em_estoque}]'
+        return f'Produto [nome={self.nome}, preco={self.preco}, quantidade_em_estoque={self.quantidade}]'
