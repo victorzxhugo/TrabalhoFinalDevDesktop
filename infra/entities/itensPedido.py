@@ -20,6 +20,8 @@ class ItensPedido (Base):
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     data_do_pedido: Mapped[datetime] = mapped_column(nullable=False)
     status: Mapped[StatusPedido] = mapped_column(nullable=False, default=StatusPedido.ABERTO)
+    produto_id: Mapped[int] = mapped_column(ForeignKey('produto.id'))
+
 
 
     def __repr__(self):

@@ -3,16 +3,19 @@ from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 
 
+
 from infra.config.base import Base
 
 class Produto (Base):
     __tablename__ = 'produto'
 
     id: Mapped[int] = mapped_column(autoincrement=True, primary_key=True)
-    nome: Mapped[str] = mapped_column(nullable=False)
+    nome: Mapped[str] = mapped_column(nullable=False, unique=True)
     preco: Mapped[float] = mapped_column(nullable=False)
     quantidade: Mapped[int] = mapped_column(nullable=True)
     categoria: Mapped[str] = mapped_column(nullable=False)
+
+    # pedidos_abertos = relationship("PedidosAbertos", back_populates="produto")
 
 
 

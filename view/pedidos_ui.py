@@ -78,6 +78,7 @@ class Ui_janela_pedidos(object):
 
         self.comboBox_pedidos_produto = QComboBox(self.widget_pedidos_maior)
         self.comboBox_pedidos_produto.setObjectName(u"comboBox_pedidos_produto")
+        self.comboBox_pedidos_produto.addItem('Selecione um item')
 
         self.verticalLayout_2.addWidget(self.comboBox_pedidos_produto)
 
