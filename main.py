@@ -8,6 +8,7 @@ from view.vendas_ui import Ui_janela_vendas
 from view.pedidos_ui import Ui_janela_pedidos
 from view.cadastro_ui import Ui_janela_cadastro
 from service.cadastro_window_service import CadastroWindowService
+from service.pedidos_window_service import PedidosWindowService
 from infra.config.connection import DBConnectionHandler
 from service.main_window_service import MainWindowService
 class MainWindow(QMainWindow, Ui_janela_QTFinal, Ui_janela_cadastro):
@@ -21,6 +22,7 @@ class MainWindow(QMainWindow, Ui_janela_QTFinal, Ui_janela_cadastro):
         db = DBConnectionHandler()
 
         self.main_window_service = MainWindowService()
+
         self.main_window_service.populate_table_estoque_baixo(self)
 
 
@@ -66,6 +68,14 @@ class PedidosDialog(QDialog, Ui_janela_pedidos):
     def __init__(self, parent=None):
         super(PedidosDialog, self).__init__(parent)
         self.setupUi(self)
+        self.lista_produtos = None
+        self.pedidos_window_service = PedidosWindowService()
+        self.btn_pedidos_buscar_produto.clicked.connect(self.buscar_produto_pedidos)
+        self.btn_pedidos_buscar_produto.clicked.connect(self.adicionar_pedido_pedidos)
+    def buscar_produto_pedidos(self):
+        self.pedidos_window_service.buscar_produtos(self)
+    def adicionar_pedido_pedidos(self):
+        self.pedidos_window_service.insert_pedido(self)
 
 if __name__ == "__main__":
     app = QApplication()
