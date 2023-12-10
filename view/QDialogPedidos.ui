@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>564</width>
-    <height>300</height>
+    <height>302</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,16 +40,6 @@
              <string>Criar pedidos</string>
             </property>
            </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="lbl_pedidos_identificador">
-            <property name="text">
-             <string>Identificador do pedido</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="txt_pedidos_identificador"/>
           </item>
           <item>
            <widget class="QLabel" name="lbl_pedidos_nome_produto">
@@ -88,7 +78,7 @@
           <item>
            <widget class="QPushButton" name="btn_pedidos_adicionar">
             <property name="text">
-             <string>Adicionar</string>
+             <string>Adicionar produto</string>
             </property>
            </widget>
           </item>
@@ -109,26 +99,30 @@
              <item>
               <widget class="QLabel" name="lbl_pedidos_nome_receber_pedidos">
                <property name="text">
-                <string>Receber pedidos</string>
+                <string>Lista de produtos</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QTableWidget" name="tb_widget_pedidos_receber_pedidos"/>
+              <widget class="QTableWidget" name="tb_lista_produtos">
+               <column>
+                <property name="text">
+                 <string>Nome</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Quantidade</string>
+                </property>
+               </column>
+              </widget>
              </item>
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_4">
                <item>
-                <widget class="QPushButton" name="btn_pedidos_visualizar">
+                <widget class="QPushButton" name="btn_pedidos_remover">
                  <property name="text">
-                  <string>Visualizar</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="btn_pedidos_receber">
-                 <property name="text">
-                  <string>Receber</string>
+                  <string>Remover</string>
                  </property>
                 </widget>
                </item>

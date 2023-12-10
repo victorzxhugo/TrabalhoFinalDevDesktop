@@ -21,7 +21,6 @@ class MainWindowService:
                     lista_produtos.remove(produto)
         main_window.tb_qtfinal_estoque_baixo.setRowCount(len(lista_produtos))
         for linha, produto in enumerate(lista_produtos):
-
                 main_window.tb_qtfinal_estoque_baixo.setItem(linha, 0, QTableWidgetItem(produto.nome))
                 main_window.tb_qtfinal_estoque_baixo.setItem(linha, 1, QTableWidgetItem(str(produto.quantidade)))
 

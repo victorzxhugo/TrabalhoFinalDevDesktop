@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'QTFinal.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.3
+## Created by: Qt User Interface Compiler version 6.6.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -24,7 +24,7 @@ class Ui_janela_QTFinal(object):
     def setupUi(self, janela_QTFinal):
         if not janela_QTFinal.objectName():
             janela_QTFinal.setObjectName(u"janela_QTFinal")
-        janela_QTFinal.resize(714, 533)
+        janela_QTFinal.resize(714, 529)
         self.centralwidget = QWidget(janela_QTFinal)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setEnabled(True)
@@ -108,21 +108,32 @@ class Ui_janela_QTFinal(object):
 
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.btn_qtfinal_vendas = QPushButton(self.widget_qtfinal_todas_opcoes)
-        self.btn_qtfinal_vendas.setObjectName(u"btn_qtfinal_vendas")
+        self.btn_qtfinal_receber = QPushButton(self.widget_qtfinal_todas_opcoes)
+        self.btn_qtfinal_receber.setObjectName(u"btn_qtfinal_receber")
 
-        self.horizontalLayout_3.addWidget(self.btn_qtfinal_vendas)
+        self.horizontalLayout_3.addWidget(self.btn_qtfinal_receber)
 
-        self.btn_qtfinal_relatorios = QPushButton(self.widget_qtfinal_todas_opcoes)
-        self.btn_qtfinal_relatorios.setObjectName(u"btn_qtfinal_relatorios")
+        self.btn_qtfinal_estoque = QPushButton(self.widget_qtfinal_todas_opcoes)
+        self.btn_qtfinal_estoque.setObjectName(u"btn_qtfinal_estoque")
 
-        self.horizontalLayout_3.addWidget(self.btn_qtfinal_relatorios)
+        self.horizontalLayout_3.addWidget(self.btn_qtfinal_estoque)
 
 
         self.verticalLayout_3.addLayout(self.horizontalLayout_3)
 
-        self.tb_qtfinal_estoque_baixo = QTableWidget(self.widget_qtfinal_todas_opcoes)
+        self.abaixo_do_minimo = QLabel(self.widget_qtfinal_todas_opcoes)
+        self.abaixo_do_minimo.setObjectName(u"abaixo_do_minimo")
+        font = QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        self.abaixo_do_minimo.setFont(font)
+        self.abaixo_do_minimo.setLayoutDirection(Qt.LeftToRight)
+        self.abaixo_do_minimo.setTextFormat(Qt.PlainText)
+        self.abaixo_do_minimo.setAlignment(Qt.AlignCenter)
 
+        self.verticalLayout_3.addWidget(self.abaixo_do_minimo)
+
+        self.tb_qtfinal_estoque_baixo = QTableWidget(self.widget_qtfinal_todas_opcoes)
         if (self.tb_qtfinal_estoque_baixo.columnCount() < 2):
             self.tb_qtfinal_estoque_baixo.setColumnCount(2)
         __qtablewidgetitem = QTableWidgetItem()
@@ -156,8 +167,9 @@ class Ui_janela_QTFinal(object):
         self.btn_qtfinal_pedidos.setText(QCoreApplication.translate("janela_QTFinal", u"Pedidos", None))
         self.lbl.setText("")
         self.lbl_qtfinal_imagem_relatorios.setText("")
-        self.btn_qtfinal_vendas.setText(QCoreApplication.translate("janela_QTFinal", u"Vendas", None))
-        self.btn_qtfinal_relatorios.setText(QCoreApplication.translate("janela_QTFinal", u"Relat\u00f3rios", None))
+        self.btn_qtfinal_receber.setText(QCoreApplication.translate("janela_QTFinal", u"Receber pedidos", None))
+        self.btn_qtfinal_estoque.setText(QCoreApplication.translate("janela_QTFinal", u"Estoque", None))
+        self.abaixo_do_minimo.setText(QCoreApplication.translate("janela_QTFinal", u"PRODUTOS ABAIXO DO M\u00cdNIMO", None))
         ___qtablewidgetitem = self.tb_qtfinal_estoque_baixo.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("janela_QTFinal", u"Produto", None));
         ___qtablewidgetitem1 = self.tb_qtfinal_estoque_baixo.horizontalHeaderItem(1)

@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'QDialogPedidos.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.3
+## Created by: Qt User Interface Compiler version 6.6.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -24,7 +24,7 @@ class Ui_janela_pedidos(object):
     def setupUi(self, janela_pedidos):
         if not janela_pedidos.objectName():
             janela_pedidos.setObjectName(u"janela_pedidos")
-        janela_pedidos.resize(564, 300)
+        janela_pedidos.resize(564, 302)
         self.verticalLayout = QVBoxLayout(janela_pedidos)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.lbl_pedidos_nome_pedidos = QLabel(janela_pedidos)
@@ -45,16 +45,6 @@ class Ui_janela_pedidos(object):
         self.lbl_pedidos_nome_criar_pedidos.setObjectName(u"lbl_pedidos_nome_criar_pedidos")
 
         self.verticalLayout_2.addWidget(self.lbl_pedidos_nome_criar_pedidos)
-
-        self.lbl_pedidos_identificador = QLabel(self.widget_pedidos_maior)
-        self.lbl_pedidos_identificador.setObjectName(u"lbl_pedidos_identificador")
-
-        self.verticalLayout_2.addWidget(self.lbl_pedidos_identificador)
-
-        self.txt_pedidos_identificador = QLineEdit(self.widget_pedidos_maior)
-        self.txt_pedidos_identificador.setObjectName(u"txt_pedidos_identificador")
-
-        self.verticalLayout_2.addWidget(self.txt_pedidos_identificador)
 
         self.lbl_pedidos_nome_produto = QLabel(self.widget_pedidos_maior)
         self.lbl_pedidos_nome_produto.setObjectName(u"lbl_pedidos_nome_produto")
@@ -78,7 +68,6 @@ class Ui_janela_pedidos(object):
 
         self.comboBox_pedidos_produto = QComboBox(self.widget_pedidos_maior)
         self.comboBox_pedidos_produto.setObjectName(u"comboBox_pedidos_produto")
-        self.comboBox_pedidos_produto.addItem('Selecione um item')
 
         self.verticalLayout_2.addWidget(self.comboBox_pedidos_produto)
 
@@ -116,22 +105,23 @@ class Ui_janela_pedidos(object):
 
         self.verticalLayout_3.addWidget(self.lbl_pedidos_nome_receber_pedidos)
 
-        self.tb_widget_pedidos_receber_pedidos = QTableWidget(self.widget_pedidos_menor)
-        self.tb_widget_pedidos_receber_pedidos.setObjectName(u"tb_widget_pedidos_receber_pedidos")
+        self.tb_lista_produtos = QTableWidget(self.widget_pedidos_menor)
+        if (self.tb_lista_produtos.columnCount() < 2):
+            self.tb_lista_produtos.setColumnCount(2)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.tb_lista_produtos.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.tb_lista_produtos.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        self.tb_lista_produtos.setObjectName(u"tb_lista_produtos")
 
-        self.verticalLayout_3.addWidget(self.tb_widget_pedidos_receber_pedidos)
+        self.verticalLayout_3.addWidget(self.tb_lista_produtos)
 
         self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.btn_pedidos_visualizar = QPushButton(self.widget_pedidos_menor)
-        self.btn_pedidos_visualizar.setObjectName(u"btn_pedidos_visualizar")
+        self.btn_pedidos_remover = QPushButton(self.widget_pedidos_menor)
+        self.btn_pedidos_remover.setObjectName(u"btn_pedidos_remover")
 
-        self.horizontalLayout_4.addWidget(self.btn_pedidos_visualizar)
-
-        self.btn_pedidos_receber = QPushButton(self.widget_pedidos_menor)
-        self.btn_pedidos_receber.setObjectName(u"btn_pedidos_receber")
-
-        self.horizontalLayout_4.addWidget(self.btn_pedidos_receber)
+        self.horizontalLayout_4.addWidget(self.btn_pedidos_remover)
 
 
         self.verticalLayout_3.addLayout(self.horizontalLayout_4)
@@ -158,14 +148,16 @@ class Ui_janela_pedidos(object):
         janela_pedidos.setWindowTitle(QCoreApplication.translate("janela_pedidos", u"Dialog", None))
         self.lbl_pedidos_nome_pedidos.setText(QCoreApplication.translate("janela_pedidos", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Pedidos</span></p></body></html>", None))
         self.lbl_pedidos_nome_criar_pedidos.setText(QCoreApplication.translate("janela_pedidos", u"Criar pedidos", None))
-        self.lbl_pedidos_identificador.setText(QCoreApplication.translate("janela_pedidos", u"Identificador do pedido", None))
         self.lbl_pedidos_nome_produto.setText(QCoreApplication.translate("janela_pedidos", u"Produto", None))
         self.btn_pedidos_buscar_produto.setText(QCoreApplication.translate("janela_pedidos", u"Buscar", None))
         self.lbl_pedidos_nome_quantidade.setText(QCoreApplication.translate("janela_pedidos", u"Quantidade", None))
-        self.btn_pedidos_adicionar.setText(QCoreApplication.translate("janela_pedidos", u"Adicionar", None))
+        self.btn_pedidos_adicionar.setText(QCoreApplication.translate("janela_pedidos", u"Adicionar produto", None))
         self.btn_pedidos_finalizar_pedidos.setText(QCoreApplication.translate("janela_pedidos", u"Finalizar pedido", None))
-        self.lbl_pedidos_nome_receber_pedidos.setText(QCoreApplication.translate("janela_pedidos", u"Receber pedidos", None))
-        self.btn_pedidos_visualizar.setText(QCoreApplication.translate("janela_pedidos", u"Visualizar", None))
-        self.btn_pedidos_receber.setText(QCoreApplication.translate("janela_pedidos", u"Receber", None))
+        self.lbl_pedidos_nome_receber_pedidos.setText(QCoreApplication.translate("janela_pedidos", u"Lista de produtos", None))
+        ___qtablewidgetitem = self.tb_lista_produtos.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("janela_pedidos", u"Nome", None));
+        ___qtablewidgetitem1 = self.tb_lista_produtos.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("janela_pedidos", u"Quantidade", None));
+        self.btn_pedidos_remover.setText(QCoreApplication.translate("janela_pedidos", u"Remover", None))
     # retranslateUi
 

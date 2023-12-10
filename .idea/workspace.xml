@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="27828a91-0918-4b9a-9c8b-2713e2babf04" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/TrabalhoFinalDevDesktop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TrabalhoFinalDevDesktop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/estoqueFinal.db" beforeDir="false" afterPath="$PROJECT_DIR$/estoqueFinal.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/entities/itensPedido.py" beforeDir="false" afterPath="$PROJECT_DIR$/infra/entities/itensPedido.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/entities/pedidosAbertos.py" beforeDir="false" afterPath="$PROJECT_DIR$/infra/entities/pedidosAbertos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/entities/produto.py" beforeDir="false" afterPath="$PROJECT_DIR$/infra/entities/produto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/repository/produto_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/infra/repository/produto_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/entities/itensPedido.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/entities/pedidosAbertos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/entities/produto.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/repository/pedidoFornecedor_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/infra/repository/pedidoFornecedor_repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/cadastro_window_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/cadastro_window_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/main_window_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/main_window_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/pedidoFornecedor_service.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/service/pedidos_window_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/pedidos_window_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/cadastro_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/cadastro_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/vendas_window_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/receber_window_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/QDialogPedidos.ui" beforeDir="false" afterPath="$PROJECT_DIR$/view/QDialogPedidos.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/QDialogRelatorio.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/QDialogVendas.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/QTFinal.ui" beforeDir="false" afterPath="$PROJECT_DIR$/view/QTFinal.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/data-analytics_9955699.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/distribution_4237529.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/main_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/main_ui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/pedidos_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/pedidos_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/relatorio_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/return_7835555.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/shopping-cart_2331970.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/vendas_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/warehouse_1585206.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,19 +55,24 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": -1
+}]]></component>
   <component name="ProjectId" id="2YukEE8BHrds3OHgRQCeXKwafwI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/victor.silveira/GestaoEmprestimo",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;teste&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Usuários/Victor/OneDrive/Área de Trabalho/TrabalhoFinalDevDesktop&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.main">
     <configuration name="connection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TrabalhoFinalDevDesktop" />

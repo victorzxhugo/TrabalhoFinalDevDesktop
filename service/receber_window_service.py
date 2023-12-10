@@ -5,7 +5,7 @@ from service.main_window_service import MainWindowService
 from infra.entities.produto import Produto
 
 
-class CadastroWindowService:
+class ReceberWindowService:
     def __init__(self):
         self.produto_repository = ProdutoRepository()
         # self.pedidoFornecedor_repository = PedidoFornecedorRepository()

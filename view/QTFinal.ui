@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>714</width>
-    <height>533</height>
+    <height>529</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -136,20 +136,43 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
-            <widget class="QPushButton" name="btn_qtfinal_vendas">
+            <widget class="QPushButton" name="btn_qtfinal_receber">
              <property name="text">
-              <string>Vendas</string>
+              <string>Receber pedidos</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="btn_qtfinal_relatorios">
+            <widget class="QPushButton" name="btn_qtfinal_estoque">
              <property name="text">
-              <string>Relatórios</string>
+              <string>Estoque</string>
              </property>
             </widget>
            </item>
           </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="abaixo_do_minimo">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>PRODUTOS ABAIXO DO MÍNIMO</string>
+           </property>
+           <property name="textFormat">
+            <enum>Qt::PlainText</enum>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QTableWidget" name="tb_qtfinal_estoque_baixo">
