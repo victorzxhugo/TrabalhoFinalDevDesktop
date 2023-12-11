@@ -1,3 +1,5 @@
+import locale
+
 from PySide6.QtWidgets import QMessageBox, QTableWidgetItem
 
 from infra.repository.pedidoFornecedor_repository import PedidoFornecedorRepository
@@ -28,6 +30,8 @@ class EstoqueWindowService:
             QMessageBox.warning(estoque_ui, 'Estoque', f'Erro ao buscar.\n Erro: {e}')
 
     def populate_table_estoque(self, estoque_ui, produtos):
+        locale.setlocale(locale.LC_ALL, 'pt_BR.utf-8')
+
         estoque_ui.tb_estoque.setRowCount(0)
         for produto in produtos:
             row_position = estoque_ui.tb_estoque.rowCount()
@@ -36,6 +40,7 @@ class EstoqueWindowService:
             estoque_ui.tb_estoque.setItem(row_position, 0, QTableWidgetItem(str(produto.id)))
             estoque_ui.tb_estoque.setItem(row_position, 1, QTableWidgetItem(produto.nome))
             estoque_ui.tb_estoque.setItem(row_position, 2, QTableWidgetItem(str(produto.quantidade)))
-            estoque_ui.tb_estoque.setItem(row_position, 3, QTableWidgetItem(str(produto.preco)))
 
+            preco_formatado = locale.currency(produto.preco, grouping=True)
+            estoque_ui.tb_estoque.setItem(row_position, 3, QTableWidgetItem(preco_formatado))
 

@@ -18,17 +18,16 @@ class CadastroWindowService:
         produto.quantidade = 0
 
         if produto.nome and produto.preco and cadastro_ui.comboBox_cadastro_categoria.currentText() != 'Selecione um item':
-
-            if produto.preco.replace('.', ',', 1).isdigit():
+            produto.preco = produto.preco.replace('.', '').replace(',', '.')
+            try:
+                produto.preco = float(produto.preco)
                 produto.categoria = cadastro_ui.comboBox_cadastro_categoria.currentText()
-                try:
-                    self.produto_repository.insert_one_produto(produto)
-                    QMessageBox.information(cadastro_ui, 'Cadastro', 'Cadastrado com sucesso!')
-                except Exception as e:
-                    QMessageBox.warning(cadastro_ui, 'Cadastro', f'Erro ao cadastrar produto.\nErro: {e}')
-            else:
-                QMessageBox.warning(cadastro_ui, 'Cadastro', 'O campo de preço deve conter apenas números.')
+                self.produto_repository.insert_one_produto(produto)
+                QMessageBox.information(cadastro_ui, 'Cadastro', 'Cadastrado com sucesso!')
+            except ValueError as e:
+                QMessageBox.warning(cadastro_ui, 'Cadastro', 'O campo de preço deve conter apenas números válidos.')
+            except Exception as e:
+                QMessageBox.warning(cadastro_ui, 'Cadastro', f'Erro ao cadastrar produto.\nErro: {e}')
         else:
             QMessageBox.warning(cadastro_ui, 'Cadastro', 'Por favor, preencha todos os campos obrigatórios.')
-
 

@@ -44,6 +44,9 @@ class Ui_janela_visualizar(object):
         __qtablewidgetitem1 = QTableWidgetItem()
         self.tb_visualizar_pedidos.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         self.tb_visualizar_pedidos.setObjectName(u"tb_visualizar_pedidos")
+        self.tb_visualizar_pedidos.verticalHeader().hide()
+        self.tb_visualizar_pedidos.setSelectionBehavior(QTableWidget.SelectRows)
+        self.tb_visualizar_pedidos.setEditTriggers(QTableWidget.NoEditTriggers)
 
         self.verticalLayout_2.addWidget(self.tb_visualizar_pedidos)
 
