@@ -61,9 +61,13 @@ class Ui_janela_cadastro(object):
         self.comboBox_cadastro_categoria = QComboBox(janela_cadastro)
         self.comboBox_cadastro_categoria.setObjectName(u"comboBox_cadastro_categoria")
         self.comboBox_cadastro_categoria.addItem('Selecione um item')
+        self.comboBox_cadastro_categoria.addItem('Alimentos')
         self.comboBox_cadastro_categoria.addItem('Bebidas')
-        self.comboBox_cadastro_categoria.addItem('Comida')
         self.comboBox_cadastro_categoria.addItem('Padaria')
+        self.comboBox_cadastro_categoria.addItem('Limpeza')
+        self.comboBox_cadastro_categoria.addItem('Higiene Pessoal')
+
+
 
         self.verticalLayout.addWidget(self.comboBox_cadastro_categoria)
 

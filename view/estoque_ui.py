@@ -42,9 +42,11 @@ class Ui_janela_estoque(object):
         self.combobox_categorias = QComboBox(janela_estoque)
         self.combobox_categorias.setObjectName(u"combobox_categorias")
         self.combobox_categorias.addItem('Todas')
+        self.combobox_categorias.addItem('Alimentos')
         self.combobox_categorias.addItem('Bebidas')
-        self.combobox_categorias.addItem('Comida')
         self.combobox_categorias.addItem('Padaria')
+        self.combobox_categorias.addItem('Limpeza')
+        self.combobox_categorias.addItem('Higiene Pessoal')
 
         self.verticalLayout_3.addWidget(self.combobox_categorias)
 

@@ -17,17 +17,20 @@ class CadastroWindowService:
         produto.preco = cadastro_ui.txt_cadastro_preco.text()
         produto.quantidade = 0
 
-        if produto.nome and produto.preco and cadastro_ui.comboBox_cadastro_categoria.currentText() != 'Selecione um item':
-            produto.preco = produto.preco.replace('.', '').replace(',', '.')
-            try:
-                produto.preco = float(produto.preco)
-                produto.categoria = cadastro_ui.comboBox_cadastro_categoria.currentText()
-                self.produto_repository.insert_one_produto(produto)
-                QMessageBox.information(cadastro_ui, 'Cadastro', 'Cadastrado com sucesso!')
-            except ValueError as e:
-                QMessageBox.warning(cadastro_ui, 'Cadastro', 'O campo de preço deve conter apenas números válidos.')
-            except Exception as e:
-                QMessageBox.warning(cadastro_ui, 'Cadastro', f'Erro ao cadastrar produto.\nErro: {e}')
+        if self.produto_repository.select_produto_by_name(produto.nome) == False:
+            if produto.nome and produto.preco and cadastro_ui.comboBox_cadastro_categoria.currentText() != 'Selecione um item':
+                produto.preco = produto.preco.replace('.', '').replace(',', '.')
+                try:
+                    produto.preco = float(produto.preco)
+                    produto.categoria = cadastro_ui.comboBox_cadastro_categoria.currentText()
+                    self.produto_repository.insert_one_produto(produto)
+                    QMessageBox.information(cadastro_ui, 'Cadastro', 'Cadastrado com sucesso!')
+                except ValueError as e:
+                    QMessageBox.warning(cadastro_ui, 'Cadastro', 'O campo de preço deve conter apenas números válidos.')
+                except Exception as e:
+                    QMessageBox.warning(cadastro_ui, 'Cadastro', f'Erro ao cadastrar produto.\nErro: {e}')
+            else:
+                QMessageBox.warning(cadastro_ui, 'Cadastro', 'Por favor, preencha todos os campos obrigatórios.')
         else:
-            QMessageBox.warning(cadastro_ui, 'Cadastro', 'Por favor, preencha todos os campos obrigatórios.')
+            QMessageBox.warning(cadastro_ui, 'Cadastro', 'Esse produto já existe.')
 

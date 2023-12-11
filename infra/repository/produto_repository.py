@@ -14,10 +14,12 @@ class ProdutoRepository:
     #     with DBConnectionHandler() as db :
     #         return db.session.query(Produto).filter(Produto.id == id_produto).first()
 
-    # @staticmethod
-    # def select_produto_by_name(name_produto):
-    #     with DBConnectionHandler() as db :
-    #         return db.session.query(Produto).filter( Produto.nome.like(name_produto) and Produto.categoria.like(name_produto)).first()
+    @staticmethod
+    def select_produto_by_name(name_produto):
+        with DBConnectionHandler() as db:
+            produto_encontrado = db.session.query(Produto).filter(Produto.nome == name_produto).first()
+            return produto_encontrado is not None
+
     @staticmethod
     def select_produto_search_name(name_produto):
           with DBConnectionHandler() as db:

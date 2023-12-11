@@ -25,8 +25,8 @@ class MainWindowService:
         for linha, produto in enumerate(lista_produtos):
                 main_window.tb_qtfinal_estoque_baixo.setItem(linha, 0, QTableWidgetItem(produto.nome))
                 main_window.tb_qtfinal_estoque_baixo.setItem(linha, 1, QTableWidgetItem(str(produto.quantidade)))
-
-        QTimer.singleShot(1000, lambda: self.mostrar_alerta_estoque_baixo())
+        if lista_produtos:
+            QTimer.singleShot(1000, lambda: self.mostrar_alerta_estoque_baixo())
 
     def mostrar_alerta_estoque_baixo(self):
         alerta = QMessageBox()
