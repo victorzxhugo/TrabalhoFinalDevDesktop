@@ -7,9 +7,12 @@ from view.main_ui import Ui_janela_QTFinal
 from view.receber_ui import Ui_janela_receber
 from view.pedidos_ui import Ui_janela_pedidos
 from view.cadastro_ui import Ui_janela_cadastro
+from view.visualizar_ui import Ui_janela_visualizar
+from view.estoque_ui import Ui_janela_estoque
 from service.cadastro_window_service import CadastroWindowService
 from service.pedidos_window_service import PedidosWindowService
 from service.receber_window_service import ReceberWindowService
+from service.estoque_window_service import EstoqueWindowService
 from infra.config.connection import DBConnectionHandler
 from service.main_window_service import MainWindowService
 class MainWindow(QMainWindow, Ui_janela_QTFinal, Ui_janela_cadastro):
@@ -19,7 +22,7 @@ class MainWindow(QMainWindow, Ui_janela_QTFinal, Ui_janela_cadastro):
         self.btn_qtfinal_cadastr_de_produtos.clicked.connect(self.cadastrar_produtos)
         self.btn_qtfinal_pedidos.clicked.connect(self.pedidos)
         self.btn_qtfinal_receber.clicked.connect(self.receber)
-        # self.btn_qtfinal_relatorios.clicked.connect(self.relatorios)
+        self.btn_qtfinal_estoque.clicked.connect(self.estoque)
         db = DBConnectionHandler()
 
         self.main_window_service = MainWindowService()
@@ -29,18 +32,22 @@ class MainWindow(QMainWindow, Ui_janela_QTFinal, Ui_janela_cadastro):
     def cadastrar_produtos(self):
         self.cadastro_produto_dialog = CadastroDialog()
         self.cadastro_produto_dialog.show()
+        self.cadastro_produto_dialog.finished.connect(
+            lambda: self.main_window_service.populate_table_estoque_baixo(self))
 
     def receber(self):
         self.receber_dialog = ReceberDialog()
         self.receber_dialog.show()
+        self.receber_dialog.finished.connect(
+            lambda: self.main_window_service.populate_table_estoque_baixo(self))
 
     def pedidos(self):
         self.pedidos_dialog = PedidosDialog()
         self.pedidos_dialog.show()
 
-    def relatorios(self):
-        self.relatorios_dialog = RelatorioDialog()
-        self.relatorios_dialog.show()
+    def estoque(self):
+        self.estoque_dialog = EstoqueDialog()
+        self.estoque_dialog.show()
 class CadastroDialog(QDialog,Ui_janela_cadastro):
     def __init__(self, parent=None):
         super(CadastroDialog, self).__init__(parent)
@@ -77,13 +84,36 @@ class ReceberDialog(QDialog, Ui_janela_receber):
     def __init__(self, parent=None):
         super(ReceberDialog, self).__init__(parent)
         self.setupUi(self)
-        self.receber_window_service
+        self.receber_window_service= ReceberWindowService()
+        self.receber_window_service.populate_table_lista_receber(self)
+        self.btn_cancelar.clicked.connect(self.cancelar_recebimento)
+        self.btn_visualizar.clicked.connect(self.visualizar)
+        self.btn_receber.clicked.connect(self.receber)
 
+    def receber(self):
+        self.receber_window_service.finalizar_recebimento(self)
+    def cancelar_recebimento(self):
+        self.receber_window_service.cancelar_recebimento(self)
+    def visualizar(self):
+        self.visualizar_dialog = VisualizarDialog()
+        self.visualizar_dialog.show()
+        self.receber_window_service.visualizar_pedido_selecionado(self.visualizar_dialog, self)
 
-# class RelatorioDialog(QDialog, Ui_janela_relatorio):
-#     def __init__(self, parent=None):
-#         super(RelatorioDialog, self).__init__(parent)
-#         self.setupUi(self)
+class VisualizarDialog(QDialog, Ui_janela_visualizar):
+    def __init__(self, parent=None):
+        super(VisualizarDialog, self).__init__(parent)
+        self.setupUi(self)
+
+class EstoqueDialog(QDialog, Ui_janela_estoque):
+    def __init__(self, parent=None):
+        super(EstoqueDialog, self).__init__(parent)
+        self.setupUi(self)
+        self.estoque_window_service = EstoqueWindowService()
+        self.btn_buscar.clicked.connect(self.buscar_produtos_estoque)
+
+    def buscar_produtos_estoque(self):
+        self.estoque_window_service.buscar_produtos(self)
+
 
 if __name__ == "__main__":
     app = QApplication()

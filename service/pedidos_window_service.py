@@ -29,26 +29,35 @@ class PedidosWindowService:
             QMessageBox.warning(pedidos_ui, 'Cadastroo', f'Erro ao cadastrar produto.\n Erro: {e}')
 
     def insert_pedido(self, pedidos_ui):
-
         nome_produto = pedidos_ui.comboBox_pedidos_produto.currentText()
+        quantidade_text = pedidos_ui.txt_pedidos_quantidade.text()
 
-        if nome_produto != 'Selecione um item' and pedidos_ui.txt_pedidos_quantidade.text():
+        if not nome_produto or not quantidade_text:
+            QMessageBox.warning(pedidos_ui, 'Aviso', 'Por favor, preencha todos os campos.')
+            return
 
-            quantidade = int(pedidos_ui.txt_pedidos_quantidade.text())
-            informacoes_pedido = {'nome_produto': nome_produto, 'quantidade': quantidade}
+        quantidade = int(quantidade_text)
+
+        if nome_produto != 'Selecione um item' and quantidade > 0:
             if pedidos_ui.lista_produtos is None:
                 pedidos_ui.lista_produtos = []
+                informacoes_pedido = {'nome_produto': nome_produto, 'quantidade': quantidade}
                 pedidos_ui.lista_produtos.append(informacoes_pedido)
-                print(f'Produto: {informacoes_pedido["nome_produto"]}, Quantidade: {informacoes_pedido["quantidade"]}')
                 self.populate_table_lista_produtos(pedidos_ui)
             else:
-                pedidos_ui.lista_produtos.append(informacoes_pedido)
-                self.populate_table_lista_produtos(pedidos_ui)
-                print(f'Produto: {informacoes_pedido["nome_produto"]}, Quantidade: {informacoes_pedido["quantidade"]}')
 
+                nomes_produtos = [produto['nome_produto'] for produto in pedidos_ui.lista_produtos]
+                if nome_produto in nomes_produtos:
+                    QMessageBox.warning(pedidos_ui, 'Aviso',
+                                        f"Produto {nome_produto} já está na lista. Não é permitido duplicar produtos.")
+                else:
+                    informacoes_pedido = {'nome_produto': nome_produto, 'quantidade': quantidade}
+                    pedidos_ui.lista_produtos.append(informacoes_pedido)
+                    self.populate_table_lista_produtos(pedidos_ui)
+                    print(f'Produto: {informacoes_pedido["nome_produto"]}, Quantidade: {informacoes_pedido["quantidade"]}')
         else:
-
-            print('Por favor, selecione um produto e preencha a quantidade.')
+            QMessageBox.warning(pedidos_ui, 'Aviso',
+                                'Por favor, selecione um produto e preencha a quantidade corretamente.')
 
 
     def populate_table_lista_produtos(self, pedidos_ui):
@@ -69,29 +78,20 @@ class PedidosWindowService:
                 'A lista de produtos não foi inicializada. Certifique-se de inicializá-la antes de popular a tabela.')
 
     def remove_produto_selecionado(self, pedidos_ui):
-        # Verificar se a lista_produtos não é nula
         if pedidos_ui.lista_produtos is not None:
-            # Obter a linha selecionada na tabela
             selected_row = pedidos_ui.tb_lista_produtos.currentRow()
 
-            # Verificar se uma linha foi realmente selecionada
             if selected_row >= 0:
-                # Obter o nome do produto na linha selecionada
                 nome_produto = pedidos_ui.tb_lista_produtos.item(selected_row, 0).text()
 
-                # Remover o produto correspondente da lista
                 for produto_info in pedidos_ui.lista_produtos:
                     if produto_info['nome_produto'] == nome_produto:
                         pedidos_ui.lista_produtos.remove(produto_info)
-                        break  # Assumindo que não há duplicatas de nomes de produtos
 
-                # Atualizar a tabela após remover o produto
                 self.populate_table_lista_produtos(pedidos_ui)
             else:
-                # Nenhuma linha foi selecionada
                 QMessageBox.warning(pedidos_ui, 'Aviso', 'Selecione um produto na tabela para remover.')
         else:
-            # Adicionar lógica para lidar com o caso em que lista_produtos é nula
             print('A lista de produtos não foi inicializada. Certifique-se de inicializá-la antes de remover itens.')
 
     def finalizar_pedido(self, pedidos_ui):
@@ -100,13 +100,11 @@ class PedidosWindowService:
 
                 self.pedidoFornecedor_repository.insert_many(pedidos_ui.lista_produtos)
 
-                # Limpar a lista_produtos após finalizar o pedido
                 pedidos_ui.lista_produtos = []
 
-                # Atualizar a tabela após finalizar o pedido
                 self.populate_table_lista_produtos(pedidos_ui)
 
-                QMessageBox.information(pedidos_ui, 'Pedido Finalizado', 'Pedido finalizado com sucesso!')
+                QMessageBox.information(pedidos_ui, 'Pedido Recebido', 'Pedido recebido com sucesso!')
             except Exception as e:
                 QMessageBox.warning(pedidos_ui, 'Erro ao Finalizar Pedido', f'Erro ao finalizar pedido.\n Erro: {e}')
         else:

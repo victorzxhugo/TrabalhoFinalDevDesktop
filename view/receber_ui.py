@@ -46,6 +46,9 @@ class Ui_janela_receber(object):
         __qtablewidgetitem2 = QTableWidgetItem()
         self.tb_receber_pedidos.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         self.tb_receber_pedidos.setObjectName(u"tb_receber_pedidos")
+        self.tb_receber_pedidos.verticalHeader().hide()
+        self.tb_receber_pedidos.setSelectionBehavior(QTableWidget.SelectRows)
+        self.tb_receber_pedidos.setEditTriggers(QTableWidget.NoEditTriggers)
 
         self.verticalLayout_2.addWidget(self.tb_receber_pedidos)
 

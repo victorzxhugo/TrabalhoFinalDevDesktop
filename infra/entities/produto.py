@@ -11,7 +11,8 @@ produto_pedido_association = Table(
     'produto_pedido',
     Base.metadata,
     Column('produto_id', Integer, ForeignKey('produtos.id')),
-    Column('pedido_id', Integer, ForeignKey('pedidos.id'))
+    Column('pedido_id', Integer, ForeignKey('pedidos.id')),
+    Column('quantidade', Integer, nullable=True)
 )
 
 class Produto (Base):
@@ -26,7 +27,7 @@ class Produto (Base):
     pedidos = relationship("Pedido", secondary=produto_pedido_association, back_populates="produtos")
 
     def __repr__(self):
-        return f'Produto [nome={self.nome}, preco={self.preco}, quantidade_em_estoque={self.quantidade}]'
+        return f'Produto [nome={self.nome}, preco={self.preco}, quantidade={self.quantidade}]'
 
 
 class Pedido (Base):

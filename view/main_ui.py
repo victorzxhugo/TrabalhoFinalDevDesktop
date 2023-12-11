@@ -142,6 +142,9 @@ class Ui_janela_QTFinal(object):
         self.tb_qtfinal_estoque_baixo.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         self.tb_qtfinal_estoque_baixo.setObjectName(u"tb_qtfinal_estoque_baixo")
         self.tb_qtfinal_estoque_baixo.setMaximumSize(QSize(16777215, 120))
+        self.tb_qtfinal_estoque_baixo.verticalHeader().hide()
+        self.tb_qtfinal_estoque_baixo.setSelectionBehavior(QTableWidget.SelectRows)
+        self.tb_qtfinal_estoque_baixo.setEditTriggers(QTableWidget.NoEditTriggers)
 
         self.verticalLayout_3.addWidget(self.tb_qtfinal_estoque_baixo)
 

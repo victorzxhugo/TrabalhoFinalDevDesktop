@@ -113,6 +113,9 @@ class Ui_janela_pedidos(object):
         __qtablewidgetitem1 = QTableWidgetItem()
         self.tb_lista_produtos.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         self.tb_lista_produtos.setObjectName(u"tb_lista_produtos")
+        self.tb_lista_produtos.verticalHeader().hide()
+        self.tb_lista_produtos.setSelectionBehavior(QTableWidget.SelectRows)
+        self.tb_lista_produtos.setEditTriggers(QTableWidget.NoEditTriggers)
 
         self.verticalLayout_3.addWidget(self.tb_lista_produtos)
 
