@@ -1,4 +1,4 @@
-Gerenciamento de Estoque
+# Gerenciamento de Estoque
 
 ## Classes: 
 - Produto: atributos incluem id, nome, preço, quantidade e categoria 
@@ -64,11 +64,12 @@ sistema para o usuário final?
 - Pyside6 
 - QTDesign 
 - SQLAlchemy 
-- Pandas 
+- Pandas
 
- 
+  ## Diagrama de Classes
+  
 
-
+![DiagramaDeClassesEstoque](https://github.com/victorzxhugo/TrabalhoFinalDevDesktop/assets/141194148/9538f752-6463-4e37-a8ac-34573daef81d)
 
 
 
