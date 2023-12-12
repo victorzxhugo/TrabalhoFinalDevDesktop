@@ -72,6 +72,9 @@ sistema para o usuário final?
 ![DiagramaDeClasses](https://github.com/victorzxhugo/TrabalhoFinalDevDesktop/assets/141194148/58dae381-6980-4a79-9e26-2cedc875a5dc)
 
 
+## Diagrama de Caso de Uso
+
+![Caso_De_Uso](https://github.com/victorzxhugo/TrabalhoFinalDevDesktop/assets/141194148/49206a5e-01c1-4a85-bea1-3e3e1ca4d223)
 
 
 
