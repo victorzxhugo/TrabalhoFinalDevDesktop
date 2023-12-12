@@ -69,7 +69,8 @@ sistema para o usuário final?
   ## Diagrama de Classes
   
 
-![DiagramaDeClassesEstoque](https://github.com/victorzxhugo/TrabalhoFinalDevDesktop/assets/141194148/9538f752-6463-4e37-a8ac-34573daef81d)
+![DiagramaDeClasses](https://github.com/victorzxhugo/TrabalhoFinalDevDesktop/assets/141194148/58dae381-6980-4a79-9e26-2cedc875a5dc)
+
 
 
 
